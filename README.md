@@ -373,7 +373,7 @@ public class q16 {
     public static void main(String[] args) {
         int[] a=new int[10];
         for(int i=0; i<10; i++) a[i] = common.getInput("Integer "+i, 100+i);
-        for(int n:a) if(n>99); else{
+        for(int n:a) if(n<99){
             System.out.println(n+" isn't a 3-digit number"); System.exit(0);
         }
         System.out.println("All numbers are 3-digit.");
@@ -464,7 +464,6 @@ public interface common{
      * @param prompt        String to prompt user with
      * @param defaultValue  Value to be returned if no input is supplied
      * @return  Input of type int
-     * @throws IOException
      */
     static int getInput(String prompt, int defaultValue){
         while (true) {
@@ -474,7 +473,7 @@ public interface common{
                 return Integer.parseInt(a);
             } catch (NumberFormatException e) {
                 if (a.isEmpty()) return defaultValue;
-                else printError("Value entered isn't an Integer");
+                else System.out.println("\u001B[31mError:\u001B[0m Value entered isn't an Integer");
             }
         }
     }
@@ -487,14 +486,14 @@ public interface common{
         while (true) {
             System.out.print(prompt+" ["+defaultValue+"]: "); String a = readString();
             if (a.isEmpty()) return defaultValue;
-            else if(a.length()>1) printError("Value entered must be single Character");
+            else if(a.length()>1) System.out.println("\u001B[31mError:\u001B[0m Value entered must be single Character");
             else return a.charAt(0);
         }
     }
     static int getLimitedInput(String prompt, int min, int max, int defaultValue){
         while (true) {
             int a = getInput(prompt+" [Bounds: "+min+" to "+max+"]", defaultValue);
-            if(a<=min || a>=max) printError("Input must be between " + min + " and " + max);
+            if(a<=min || a>=max) System.out.println("\u001B[31mError:\u001B[0m Input must be between " + min + " and " + max);
             else return a;
         }
     }
@@ -505,7 +504,6 @@ public interface common{
             return "ERROR";
         }
     }
-    static void printError(String s) { System.out.println("\u001B[31mError:\u001B[0m "+s);}
     static void printArray(int[] a) { for(int i=0; i<10; i++) System.out.print(a[i]+" ");}
     static void printArray(String[] a) { for(int i=0; i<10; i++) System.out.print(a[i]+" ");}
 }
