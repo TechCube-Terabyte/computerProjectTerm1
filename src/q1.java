@@ -1,4 +1,3 @@
-
 public class q1 {
     static void polygon(int n, char ch){
         for(int i=0; i<n; i++){
@@ -16,7 +15,7 @@ public class q1 {
         System.out.println("*\n**\n***");
     }
     public static void main(String[] args){
-        common.printInfo("Functions:\n\t"+
+        System.out.println("Functions:\n\t"+
         "1. void polygon(int n, char ch)\n\t"+
         "2. void polygon(int x, int y)\n\t"+
         "3. void polygon()"

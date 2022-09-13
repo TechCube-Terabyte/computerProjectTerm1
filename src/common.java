@@ -48,5 +48,6 @@ public interface common{
         }
     }
     static void printError(String s) { System.out.println("\u001B[31mError:\u001B[0m "+s);}
-    static void printInfo(String s) { System.out.println("\u001B[44m\u001B[37m"+s+"\u001B[0m");}
+    static void printArray(int[] a) { for(int i=0; i<10; i++) System.out.print(a[i]+" ");}
+    static void printArray(String[] a) { for(int i=0; i<10; i++) System.out.print(a[i]+" ");}
 }

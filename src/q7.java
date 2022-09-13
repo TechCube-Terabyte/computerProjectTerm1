@@ -5,9 +5,9 @@ public class q7 {
             a = x; b = y;
         }
         void calculate(){
-            for(int i=(a>b?a:b); i==0; i--)
+            for(int i=(a>b?a:b); i>0; i--)
                 if(a%i==0 && b%i==0){
-                    System.out.println("HCF: " + i + "\nLCM: " + a*b/i);
+                    System.out.println("HCF: "+i+"\nLCM: "+a*b/i);
                     break;
                 }
         }
